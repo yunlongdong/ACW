@@ -1,5 +1,7 @@
 # ACW: a light-weight deep learning framework based on numpy
 
+### requires Python 3.x, numpy, matplotlib
+
 It is still improving. The main design of this framework it to simplify the structure. I devide all stuff common in deep learning models into 3 categories:
 
 * Layer (```LayerLib.py```): perform some transform on input and have parameters to be optimize (such as Dense, Conv, and so on). The api is following Keras somewhat.
