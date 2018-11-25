@@ -7,5 +7,9 @@ It is still improving. The main design of this framework it to simplify the stru
 * Loss (LossLib.py): The loss function used to minimize. such as MSE, L1Loss, CrossEntropy and so on.
 
 
+### example
+
+A MLP example has been provide in example dir.
+
 
 
