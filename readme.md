@@ -9,7 +9,7 @@ It is still improving. The main design of this framework it to simplify the stru
 
 ### example
 
-A MLP example has been provide in example dir.
+A MLP example has been provide in ```example/``` dir.
 
 
 
