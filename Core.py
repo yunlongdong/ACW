@@ -8,11 +8,14 @@ class Op:
     def __repr__(self):
         return 'Op:' + self.name
 
-    def foward(self, x):
+    def forward(self, x):
         pass
 
     def backward(self, grad_y):
         pass
+    
+    def __call__(self, x):
+        return self.forward(x)
         
 
 class Layer:
@@ -24,11 +27,14 @@ class Layer:
     def __repr__(self):
         return 'layer:' + self.name
 
-    def foward(self, x):
+    def forward(self, x):
         pass
 
     def backward(self, grad_y):
         pass
+
+    def __call__(self, x):
+        return self.forward(x)
 
 class Loss:
     def __init__(self, name):
@@ -38,12 +44,14 @@ class Loss:
     def __repr__(self):
         return 'loss:' + self.name
 
-    def foward(self, x, y):
+    def forward(self, x, y):
         pass
 
     def backward(self, grad_y):
         pass
         
+    def __call__(self, x):
+        return self.forward(x)
     
 
 

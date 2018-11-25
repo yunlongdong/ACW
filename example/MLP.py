@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 from LayerLib import Dense
 from LossLib import L2 
 from OpLib import ReLU, Sigmoid
