@@ -20,7 +20,7 @@ L2Loss = L2()
 net = [D1, relu, D2, L2Loss]
 
 
-lr = 2e-4
+lr = 3e-4
 
 for i in range(5000):
     # forward
@@ -33,9 +33,9 @@ for i in range(5000):
 
     # backward
     grad_loss, _ = L2Loss.backward(y3, y)
-    grad_input3, grad_w2 = D2.backward(y2, grad_loss)
-    grad_input2, _ = relu.backward(y1, grad_input3)
-    grad_input1, grad_w1 = D1.backward(x, grad_input2)
+    grad_input3, grad_w2 = D2.backward(grad_loss)
+    grad_input2, _ = relu.backward(grad_input3)
+    grad_input1, grad_w1 = D1.backward(grad_input2)
 
     D1.param -= lr* grad_w1
     D2.param -= lr* grad_w2
