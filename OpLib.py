@@ -16,6 +16,19 @@ class ReLU(Op):
         grad_y[x<0] = 0
         return grad_y, 0
 
+class Flatten(Op):
+
+    def __init__(self):
+        super().__init__('Op:Flatten')
+
+    def forward(self, x):
+        self.x = x
+        return x.flatten('C')
+
+    def backward(self, grad_y):
+        x = self.x
+        grad_x = grad_y.reshape(x.shape)
+        return grad_x, 0
 
 class Sigmoid(Op):
 
