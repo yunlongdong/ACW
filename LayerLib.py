@@ -158,11 +158,16 @@ class Conv2D(Layer):
         H = X.shape[2]
         W = X.shape[3]
 
+        k_s = self.k_s
+        stride = self.stride
+        pad_size = int((k_s-1)/2)
+
+
         colK = self.k2col()
         colX = self.im2col_g(X)
         colY = colK.dot(colX)
 
-        Y = colY.reshape((N, self.c_out, H, W))
+        Y = colY.reshape((N, self.c_out, int((H+2*pad_size-k_s)/stride + 1), int((W+2*pad_size-k_s)/stride + 1)))
     
 
         # saving for backward calc
