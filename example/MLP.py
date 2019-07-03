@@ -20,9 +20,9 @@ L2Loss = L2()
 net = [D1, relu, D2, L2Loss]
 
 
-lr = 3e-4
+lr = 2e-4
 
-for i in range(5000):
+for i in range(50000):
     # forward
     y1 = D1(x)
     y2 = relu(y1) 
